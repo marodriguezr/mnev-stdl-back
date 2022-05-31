@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\NotificationsController;
+use App\Models\Notifications;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('notifications', 'App\Http\Controllers\NotificationsController@findAllNotifications');
+Route::post('notifications', 'App\Http\Controllers\NotificationsController@createOneNotification');
