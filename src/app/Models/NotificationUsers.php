@@ -10,6 +10,9 @@ class NotificationUsers extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['notification_id', 'cedula'];
+    protected $guarded = ['id'];
+
     public function notification()
     {
         return $this->belongsTo(Notification::class);

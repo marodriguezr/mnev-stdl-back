@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Notifications extends Model
 {
     use HasFactory;
+    protected $fillable = ['title','description','is_viewed','is_public','notification_levels_id','categories_id'];
+
+    protected $guarded = ['id'];
 
     public function notificationLevels()
     {
